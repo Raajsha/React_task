@@ -1,0 +1,19 @@
+.signin{
+color: black;
+width: 600px;
+margin-top: 25%;
+}
+
+.form-container{
+    width: 100%;
+    margin: auto;
+}
+
+p{
+    width: 100%;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}

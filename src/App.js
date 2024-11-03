@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import SignUp from './components/pages/signup.js';
+import LandingPage from './components/pages/landingpage.js';
+import Signin from './components/pages/signin.js';
+import Mainpage from './components/pages/mainpage.js';
+import { Route , Routes} from 'react-router-dom';
+import ProtectedRoute from "./components/protectedRoute";
+import Layout from "./components/layout.js";
 
-function App() {
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />} >
+        <Route path = "signup" element = {<SignUp />} />
+        <Route path = "signin" element = {<Signin />} />
+        <Route path = "/" element = {<LandingPage />} />
+        {/*<Route path = "mainpage" element = {<ProtectedRoute component={Mainpage}/>} />*/}
+        <Route path='mainpage' element = {<Mainpage />} />
+      </Route>
+    </Routes>
   );
-}
+};
 
 export default App;
